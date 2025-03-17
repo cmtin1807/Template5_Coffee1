@@ -1,7 +1,7 @@
 (function ($) {
     'use strict';
 
-    //Header Search
+     //Header Search
     if($('.search-box-outer').length) {
         $('.search-box-outer').on('click', function() {
             $('body').addClass('search-active');
@@ -36,7 +36,7 @@
         $('body').addClass('loaded');
     });
 
-
+   
 
     // Case Study Active
     $('.hero-list').owlCarousel({
@@ -199,26 +199,26 @@
             items: 1,
             slideSpeed: 1500,
             nav: false,
-            autoplay: false,
+            autoplay: false, 
             dots: false,
             loop: true,
             responsiveRefreshRate: 200
         }).on('changed.owl.carousel', syncPosition);
         thumb
-            .on('initialized.owl.carousel', function() {
-                thumb.find(".owl-item").eq(0).addClass("current");
-            })
-            .owlCarousel({
-                items: slidesPerPage,
-                dots: false,
-                nav: true,
-                item: 4,
-                smartSpeed: 1500,
-                slideSpeed: 1500,
-                slideBy: slidesPerPage,
-                navText: ["<i class='bi bi-chevron-left''></i>", "<i class='bi bi-chevron-right''></i>"],
-                responsiveRefreshRate: 100
-            }).on('changed.owl.carousel', syncPosition2);
+        .on('initialized.owl.carousel', function() {
+            thumb.find(".owl-item").eq(0).addClass("current");
+        })
+        .owlCarousel({
+            items: slidesPerPage,
+            dots: false,
+            nav: true,
+            item: 4,
+            smartSpeed: 1500,
+            slideSpeed: 1500,
+            slideBy: slidesPerPage, 
+            navText: ["<i class='bi bi-chevron-left''></i>", "<i class='bi bi-chevron-right''></i>"],
+            responsiveRefreshRate: 100
+        }).on('changed.owl.carousel', syncPosition2);
         function syncPosition(el) {
             var count = el.item.count - 1;
             var current = Math.round(el.item.index - (el.item.count / 2) - .5);
@@ -229,10 +229,10 @@
                 current = 0;
             }
             thumb
-                .find(".owl-item")
-                .removeClass("current")
-                .eq(current)
-                .addClass("current");
+            .find(".owl-item")
+            .removeClass("current")
+            .eq(current)
+            .addClass("current");
             var onscreen = thumb.find('.owl-item.active').length - 1;
             var start = thumb.find('.owl-item.active').first().index();
             var end = thumb.find('.owl-item.active').last().index();
@@ -261,7 +261,7 @@
 
     /*  Cart Plus Minus Button
     /*----------------------------------------*/
-
+    
     $('.ctnbutton').on('click', function () {
         var $button = $(this);
         var oldValue = $button.parent().find('input').val();
@@ -280,7 +280,7 @@
 
 
     /*---------------------
-    WOW active js
+    WOW active js 
     --------------------- */
     new WOW().init();
 
@@ -381,45 +381,45 @@
 
 
     // Sidebar
-
+    
     "use strict";
-    jQuery(document).ready(function (o) {
-        0 < o(".offset-side-bar").length &&
-        o(".offset-side-bar").on("click", function (e) {
-            e.preventDefault(), e.stopPropagation(), o(".cart-group").addClass("isActive");
-        }),
-        0 < o(".close-side-widget").length &&
-        o(".close-side-widget").on("click", function (e) {
-            e.preventDefault(), o(".cart-group").removeClass("isActive");
-        }),
-        0 < o(".navSidebar-button").length &&
-        o(".navSidebar-button").on("click", function (e) {
-            e.preventDefault(), e.stopPropagation(), o(".info-group").addClass("isActive");
-        }),
-        0 < o(".close-side-widget").length &&
-        o(".close-side-widget").on("click", function (e) {
-            e.preventDefault(), o(".info-group").removeClass("isActive");
-        }),
-            o("body").on("click", function (e) {
-                o(".info-group").removeClass("isActive"), o(".cart-group").removeClass("isActive");
-            }),
-            o(".xs-sidebar-widget").on("click", function (e) {
-                e.stopPropagation();
-            }),
-        0 < o(".xs-modal-popup").length &&
-        o(".xs-modal-popup").magnificPopup({
-            type: "inline",
-            fixedContentPos: !2,
-            fixedBgPos: !0,
-            overflowY: "auto",
-            closeBtnInside: !2,
-            callbacks: {
-                beforeOpen: function () {
-                    this.st.mainClass = "my-mfp-slide-bottom xs-promo-popup";
-                },
-            },
-        });
-    });
+        jQuery(document).ready(function (o) {
+            0 < o(".offset-side-bar").length &&
+                o(".offset-side-bar").on("click", function (e) {
+                    e.preventDefault(), e.stopPropagation(), o(".cart-group").addClass("isActive");
+                }),
+                0 < o(".close-side-widget").length &&
+                    o(".close-side-widget").on("click", function (e) {
+                        e.preventDefault(), o(".cart-group").removeClass("isActive");
+                    }),
+                0 < o(".navSidebar-button").length &&
+                    o(".navSidebar-button").on("click", function (e) {
+                        e.preventDefault(), e.stopPropagation(), o(".info-group").addClass("isActive");
+                    }),
+                0 < o(".close-side-widget").length &&
+                    o(".close-side-widget").on("click", function (e) {
+                        e.preventDefault(), o(".info-group").removeClass("isActive");
+                    }),
+                o("body").on("click", function (e) {
+                    o(".info-group").removeClass("isActive"), o(".cart-group").removeClass("isActive");
+                }),
+                o(".xs-sidebar-widget").on("click", function (e) {
+                    e.stopPropagation();
+                }),
+                0 < o(".xs-modal-popup").length &&
+                    o(".xs-modal-popup").magnificPopup({
+                        type: "inline",
+                        fixedContentPos: !2,
+                        fixedBgPos: !0,
+                        overflowY: "auto",
+                        closeBtnInside: !2,
+                        callbacks: {
+                            beforeOpen: function () {
+                                this.st.mainClass = "my-mfp-slide-bottom xs-promo-popup";
+                            },
+                        },
+                    });
+            });
 
 
 })(jQuery);
